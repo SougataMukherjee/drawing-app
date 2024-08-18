@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing app</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+
+</head>
+
+<body>
+    <div class="field">
+        <canvas id="canvas"></canvas>
+        <div class="tools flex justify-center flex-row">
+            <button onClick="download()" class="button">Save <i class="ri-arrow-down-line"></i></button>
+            <button onClick="undo_last()" class="button">Undo <i class="ri-arrow-go-back-line"></i></button>
+            <button onClick="redo_last()" class="button">Redo <i class="ri-arrow-go-forward-line"></i></button>
+            <button onClick="eraser_last()" class="button">Eraser <i class="ri-eraser-line"></i></button>
+            <button onClick="clear_canvas()" class="button">Clear <i class="ri-chat-delete-line"></i></button>
+            <button onClick="straight_line()" class="button">line <i class="ri-edit-2-line"></i></button>
+
+            <div onClick="change_color(this)" class="color-field " style="background-color: red"></div>
+            <div onClick="change_color(this)" class="color-field " style="background-color: yellow"></div>
+            <div onClick="change_color(this)" class="color-field " style="background-color: blue"></div>
+            <div onClick="change_color(this)" class="color-field" style="background-color: green"></div>
+            <input onInput="draw_color=this.value" type="color" class="color-picker" />
+            <input onInput="draw_width=this.value" type="range" min="1" max="100" class="pen-range" />
+        </div>
+
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
